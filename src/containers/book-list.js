@@ -3,12 +3,12 @@ import React,{Component}  from 'react'
 import {connect} from 'react-redux'
 
 class Booklist extends Component{
-    constructor(props){
-        super(props)
-        this.renderlist = this.renderlist(this)
-        console.log(this.props.books)
-    }
+    constructor(props) {
+        super(props);
+        this.renderlist = this.renderlist.bind(this);
+      }
     renderlist(){
+        console.log(this.props.books)
         return this.props.books.map(book =>{
             return(
                 <li key={book.title} className="list-group-item">
